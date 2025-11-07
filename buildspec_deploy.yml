@@ -24,4 +24,4 @@ phases:
       - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@13.223.83.189 "mkdir -p app"
       - echo Copying files to server...
       - scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r backend/* ubuntu@13.223.83.189:app
-      - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@44.201.59.219 "sudo apt-get update -y && sudo apt-get install -y python3-venv && python3 -m venv app/venv && source app/venv/bin/activate && pip install --upgrade pip && pip install -r app/requirements.txt && pm2 start app/src/server.py --name todo-api --interpreter ./app/venv/bin/python3 || pm2 restart todo-api && pm2 save"
+      - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@13.223.83.189 "sudo apt-get update -y && sudo apt-get install -y python3-venv && python3 -m venv app/venv && source app/venv/bin/activate && pip install --upgrade pip && pip install -r app/requirements.txt && pm2 start app/src/server.py --name todo-api --interpreter ./app/venv/bin/python3 || pm2 restart todo-api && pm2 save"
